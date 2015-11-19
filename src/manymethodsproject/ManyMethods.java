@@ -9,45 +9,54 @@ public class ManyMethods
         System.out.println("CREATING AN OBJECT");
         System.out.println("******************");
     }
-    
-    
-    public void myProcedure()
-    {
-        System.out.println("Non returining procedure");
-    }
-    public String myFunction()
-    {
-        return "Returning function";
-    }
-    
-    public void myParameter(int theParam)
-    {
-        System.out.println("Parameter passed in is "+ theParam);
-    }
-    
+
     public double IterativeSolution(int root, int iterations)
     {
         double solution=root/2;
         for(int i=0;i<iterations+1;i++)
         {
-            //solution=(1/2) * (solution+(2/solution));
             solution = (solution+(root/solution))/2;
         }
         return solution;
     }
     
-    public void runProgram()
+    public void myProcedure()
     {
-        myProcedure();
-        System.out.println(myFunction());
-        myParameter(27);
-        System.out.println(IterativeSolution(25, 100));
+        System.out.println("*****RUNNING THE PROCEDURE*****");
+    }
+    
+    public void myParameter(String theName)
+    {
+        System.out.println("*****RUNNING THE PARAMETER*****");
+        System.out.println("Parameter value is "+theName);
+    }
+    
+    public int addTheseTwo(int num1, int num2)
+    {
+        System.out.println("*****RUNNING THE ADD*****");
+        int addTotal=num1+num2;
+        return addTotal;
+    }
+    
+    public int multiplyTheseTwo(int num1, int num2)
+    {
+        System.out.println("*****RUNNING THE MULTIPLY*****");
+        int multiplyTotal=num1*num2;
+        return multiplyTotal;
     }
     
     public static void main(String[] args)
     {
        ManyMethods mm = new ManyMethods();
-       mm.runProgram();
+       //double rootOutput=mm.IterativeSolution(2, 10);
+       //System.out.println(rootOutput);
+       
+       mm.myProcedure();
+       mm.myParameter("Matt");
+       
+       int addResult=mm.addTheseTwo(2, 3);
+       int multiplyResult=mm.multiplyTheseTwo(2, 5);
+       System.out.println("Adding gives "+addResult+" and multiplying gives "+multiplyResult);
        
     }
     
